@@ -1,0 +1,14 @@
+# Lokalne środowisko Pythona
+.venv/
+
+# Pliki techniczne Pythona
+__pycache__/
+*.py[cod]
+
+# Lokalne dane aplikacji
+data/
+*.db
+*.sqlite3
+
+# Sekrety aplikacji
+.streamlit/secrets.toml
