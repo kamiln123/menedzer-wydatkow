@@ -25,3 +25,9 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** Korzystamy z wirtualnego środowiska `.venv` umieszczonego w głównym folderze projektu.
 
 **Uzasadnienie:** Biblioteki potrzebne przez aplikację są oddzielone od pozostałych projektów na komputerze. Ich wersje zapisujemy w `requirements.txt`, dzięki czemu środowisko można odtworzyć po pobraniu projektu z GitHuba.
+
+## 2026-08-18 — Pierwsza wersja projektu
+
+**Decyzja:** Sprint 1 został oznaczony tagiem `v0.1.0` i opublikowany jako GitHub Release.
+
+**Uzasadnienie:** Każdy ukończony sprint ma mieć możliwą do odtworzenia, publiczną wersję. Tag wskazuje dokładny stan kodu, a release czytelnie opisuje postęp projektu w portfolio.

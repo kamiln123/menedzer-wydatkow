@@ -14,7 +14,7 @@ Numer wersji ma postać `vMAJOR.MINOR.PATCH`:
 
 | Sprint | Wersja | Rezultat |
 | --- | --- | --- |
-| 1 | `v0.1.0` | Aplikacja Streamlit uruchamia się lokalnie. |
+| 1 | `v0.1.0` | Aplikacja Streamlit uruchamia się lokalnie. **Ukończono i opublikowano 2026-08-18.** |
 | 2 | `v0.2.0` | Można dodać wydatek w formularzu. |
 | 3 | `v0.3.0` | Wydatki są trwale zapisywane w SQLite. |
 | 4 | `v0.4.0` | Jest lista wydatków oraz filtry. |

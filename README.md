@@ -6,7 +6,9 @@ Projekt powstaje jako portfolio i praktyczny powrót do języka Python. Rozwijam
 
 ## Status
 
-Sprint 1 w toku — środowisko `.venv` jest skonfigurowane, Streamlit zainstalowany, a pierwszy ekran aplikacji działa lokalnie.
+Sprint 1 został ukończony i opublikowany jako release `v0.1.0`. Środowisko `.venv` jest skonfigurowane, Streamlit zainstalowany, a pierwszy ekran aplikacji działa lokalnie.
+
+Kolejny etap: formularz dodawania wydatków.
 
 ## Planowany stos technologiczny
 

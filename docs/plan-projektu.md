@@ -58,7 +58,7 @@ Te funkcje są wartościowe, ale zostawiamy je na później, aby projekt szybko 
 - [x] Utworzenie wirtualnego środowiska Python (`.venv`).
 - [x] Instalacja Streamlit.
 - [x] Lokalne uruchomienie aplikacji.
-- [ ] Utworzenie lokalnego commitu, tagu `v0.1.0` i publikacja release na GitHubie.
+- [x] Utworzenie lokalnego commitu, tagu `v0.1.0` i publikacja release na GitHubie.
 
 ## Kryteria ukończenia MVP
 
