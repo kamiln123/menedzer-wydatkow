@@ -60,6 +60,12 @@ Te funkcje są wartościowe, ale zostawiamy je na później, aby projekt szybko 
 - [x] Lokalne uruchomienie aplikacji.
 - [x] Utworzenie lokalnego commitu, tagu `v0.1.0` i publikacja release na GitHubie.
 
+### Sprint 2 — Formularz i tymczasowa lista (`v0.2.0`)
+
+**Cel:** użytkownik dodaje wydatki w formularzu i widzi je do końca bieżącej sesji aplikacji.
+
+Szczegółowy zakres: [Sprint 2 — Formularz i tymczasowa lista wydatków](sprint-2.md).
+
 ## Kryteria ukończenia MVP
 
 - Aplikację da się uruchomić według instrukcji w README.
