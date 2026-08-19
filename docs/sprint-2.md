@@ -21,7 +21,7 @@ Pozwolić użytkownikowi dodać wydatek przez formularz i zobaczyć go na liści
 - [x] Wyświetlić komunikat powodzenia i tymczasową listę wydatków.
 - [x] Ręcznie sprawdzić dodawanie kilku wydatków.
 - [x] Uzupełnić README i dokumentację.
-- [ ] Utworzyć commit, tag `v0.2.0` i GitHub Release.
+- [x] Utworzyć commit, tag `v0.2.0` i GitHub Release.
 
 ## Kryteria ukończenia
 

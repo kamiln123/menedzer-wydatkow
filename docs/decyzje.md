@@ -31,3 +31,9 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** Sprint 1 został oznaczony tagiem `v0.1.0` i opublikowany jako GitHub Release.
 
 **Uzasadnienie:** Każdy ukończony sprint ma mieć możliwą do odtworzenia, publiczną wersję. Tag wskazuje dokładny stan kodu, a release czytelnie opisuje postęp projektu w portfolio.
+
+## 2026-08-19 — Druga wersja projektu
+
+**Decyzja:** Sprint 2 został oznaczony tagiem `v0.2.0` i opublikowany jako GitHub Release.
+
+**Uzasadnienie:** Wersja stanowi działający etap aplikacji: formularz, walidację i tymczasową listę wydatków. Kolejna wersja skupi się na trwałości danych, bez równoczesnego zwiększania zakresu interfejsu.
