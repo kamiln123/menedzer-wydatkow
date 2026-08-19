@@ -37,3 +37,9 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** Sprint 2 został oznaczony tagiem `v0.2.0` i opublikowany jako GitHub Release.
 
 **Uzasadnienie:** Wersja stanowi działający etap aplikacji: formularz, walidację i tymczasową listę wydatków. Kolejna wersja skupi się na trwałości danych, bez równoczesnego zwiększania zakresu interfejsu.
+
+## 2026-08-19 — Format kwot w bazie danych
+
+**Decyzja:** SQLite zapisuje kwoty jako całkowitą liczbę groszy, a interfejs pokazuje je w złotówkach.
+
+**Uzasadnienie:** Liczby zmiennoprzecinkowe mogą niedokładnie reprezentować wartości dziesiętne. Zapis całkowity, np. `2550` zamiast `25,50`, pozwala bezpiecznie wykonywać późniejsze obliczenia budżetu i sum wydatków.

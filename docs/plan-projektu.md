@@ -66,6 +66,12 @@ Te funkcje są wartościowe, ale zostawiamy je na później, aby projekt szybko 
 
 Szczegółowy zakres: [Sprint 2 — Formularz i tymczasowa lista wydatków](sprint-2.md).
 
+### Sprint 3 — Trwały zapis w SQLite (`v0.3.0`)
+
+**Cel:** dane o wydatkach przetrwają ponowne uruchomienie aplikacji dzięki lokalnej bazie SQLite.
+
+Szczegółowy zakres: [Sprint 3 — Trwały zapis w SQLite](sprint-3.md).
+
 ## Kryteria ukończenia MVP
 
 - Aplikację da się uruchomić według instrukcji w README.
