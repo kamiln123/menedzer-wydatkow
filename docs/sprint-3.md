@@ -22,7 +22,7 @@ Zastąpić tymczasową listę sesji lokalną bazą SQLite, aby wydatki pozostał
 - [x] Przeliczać kwotę między złotówkami interfejsu a groszami bazy.
 - [x] Ręcznie sprawdzić trwałość danych po restarcie aplikacji.
 - [x] Uzupełnić dokumentację.
-- [ ] Utworzyć commit, tag `v0.3.0` i GitHub Release.
+- [x] Utworzyć commit, tag `v0.3.0` i GitHub Release.
 
 ## Kryteria ukończenia
 

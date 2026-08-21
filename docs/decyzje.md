@@ -43,3 +43,15 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** SQLite zapisuje kwoty jako całkowitą liczbę groszy, a interfejs pokazuje je w złotówkach.
 
 **Uzasadnienie:** Liczby zmiennoprzecinkowe mogą niedokładnie reprezentować wartości dziesiętne. Zapis całkowity, np. `2550` zamiast `25,50`, pozwala bezpiecznie wykonywać późniejsze obliczenia budżetu i sum wydatków.
+
+## 2026-08-19 — Trzecia wersja projektu
+
+**Decyzja:** Sprint 3 został oznaczony tagiem `v0.3.0` i opublikowany jako GitHub Release.
+
+**Uzasadnienie:** Wersja zapewnia trwałość danych: wydatki są zapisywane lokalnie, odczytywane po ponownym uruchomieniu i nie trafiają do repozytorium GitHub.
+
+## 2026-08-21 — Filtry w Sprint 4
+
+**Decyzja:** Wydatki będą prezentowane w `st.dataframe`, a filtry kategorii i miesiąca znajdą się w panelu bocznym. Opcje miesiąca pochodzą z danych zapisanych w SQLite.
+
+**Uzasadnienie:** Tabela daje czytelny widok danych, panel boczny nie zmniejsza miejsca na wyniki, a dynamiczne opcje filtrów nie pokazują miesięcy bez zapisanych wydatków.

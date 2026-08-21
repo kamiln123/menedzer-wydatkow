@@ -57,18 +57,69 @@ def add_expense(
         connection.close()
 
 
-def get_expenses() -> list[sqlite3.Row]:
-    """Zwraca wszystkie wydatki od najnowszego do najstarszego."""
+def get_expenses(
+    category: str | None = None,
+    month: str | None = None,
+) -> list[sqlite3.Row]:
+    """Zwraca wydatki opcjonalnie ograniczone kategorią i miesiącem."""
+    connection = get_connection()
+
+    try:
+        query = """
+            SELECT id, amount_cents, category, expense_date, description
+            FROM expenses
+        """
+        conditions: list[str] = []
+        parameters: list[str] = []
+
+        if category is not None:
+            conditions.append("category = ?")
+            parameters.append(category)
+
+        if month is not None:
+            conditions.append("substr(expense_date, 1, 7) = ?")
+            parameters.append(month)
+
+        if conditions:
+            query += " WHERE " + " AND ".join(conditions)
+
+        query += " ORDER BY expense_date DESC, id DESC"
+
+        cursor = connection.execute(query, parameters)
+        return cursor.fetchall()
+    finally:
+        connection.close()
+
+
+def get_categories() -> list[str]:
+    """Zwraca alfabetyczną listę kategorii zapisanych w bazie."""
     connection = get_connection()
 
     try:
         cursor = connection.execute(
             """
-            SELECT id, amount_cents, category, expense_date, description
+            SELECT DISTINCT category
             FROM expenses
-            ORDER BY expense_date DESC, id DESC
+            ORDER BY category ASC
             """
         )
-        return cursor.fetchall()
+        return [row["category"] for row in cursor.fetchall()]
+    finally:
+        connection.close()
+
+
+def get_months() -> list[str]:
+    """Zwraca miesiące z wydatkami w formacie RRRR-MM."""
+    connection = get_connection()
+
+    try:
+        cursor = connection.execute(
+            """
+            SELECT DISTINCT substr(expense_date, 1, 7) AS month
+            FROM expenses
+            ORDER BY month DESC
+            """
+        )
+        return [row["month"] for row in cursor.fetchall()]
     finally:
         connection.close()

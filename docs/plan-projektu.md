@@ -72,6 +72,12 @@ Szczegółowy zakres: [Sprint 2 — Formularz i tymczasowa lista wydatków](spri
 
 Szczegółowy zakres: [Sprint 3 — Trwały zapis w SQLite](sprint-3.md).
 
+### Sprint 4 — Tabela i filtrowanie (`v0.4.0`)
+
+**Cel:** użytkownik łatwo przegląda wydatki i ogranicza listę do wybranej kategorii oraz miesiąca.
+
+Szczegółowy zakres: [Sprint 4 — Tabela i filtrowanie wydatków](sprint-4.md).
+
 ## Kryteria ukończenia MVP
 
 - Aplikację da się uruchomić według instrukcji w README.
