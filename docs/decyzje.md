@@ -55,3 +55,21 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** Wydatki będą prezentowane w `st.dataframe`, a filtry kategorii i miesiąca znajdą się w panelu bocznym. Opcje miesiąca pochodzą z danych zapisanych w SQLite.
 
 **Uzasadnienie:** Tabela daje czytelny widok danych, panel boczny nie zmniejsza miejsca na wyniki, a dynamiczne opcje filtrów nie pokazują miesięcy bez zapisanych wydatków.
+
+## 2026-08-21 — Czwarta wersja projektu
+
+**Decyzja:** Sprint 4 został oznaczony tagiem `v0.4.0` i opublikowany jako GitHub Release.
+
+**Uzasadnienie:** Wersja umożliwia wygodne przeglądanie danych: tabela, filtry oraz obsługa braku wyników działają na trwałych danych zapisanych w SQLite.
+
+## 2026-08-21 — Zasady podsumowania budżetu
+
+**Decyzja:** Podsumowanie budżetowe reaguje wyłącznie na filtr miesiąca. W widoku „Wszystkie” agreguje wszystkie wydatki i ustawione budżety, a filtr kategorii wpływa tylko na tabelę.
+
+**Uzasadnienie:** Budżet jest limitem miesięcznym dla wszystkich wydatków. Porównywanie pełnego budżetu tylko z jedną kategorią prowadziłoby do mylących wniosków.
+
+## 2026-08-31 — Budżety miesięczne w Sprint 5
+
+**Decyzja:** Budżety zapisujemy w osobnej tabeli `budgets`, po jednym budżecie na miesiąc. Ponowny zapis dla tego samego miesiąca aktualizuje wcześniejszą wartość.
+
+**Uzasadnienie:** Budżet jest innym rodzajem danych niż wydatek i nie powinien być przechowywany w tabeli `expenses`. Ograniczenie jednego budżetu na miesiąc upraszcza model danych, a aktualizacja pozwala użytkownikowi zmienić limit bez tworzenia duplikatów.

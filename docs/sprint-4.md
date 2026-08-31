@@ -35,4 +35,4 @@ Zastąpić tekstową listę wydatków czytelną tabelą oraz umożliwić ogranic
 - [x] Wyświetlić liczbę dopasowanych wydatków lub komunikat o braku wyników.
 - [x] Ręcznie przetestować kombinacje filtrów.
 - [x] Uzupełnić dokumentację.
-- [ ] Utworzyć commit, tag `v0.4.0` i GitHub Release.
+- [x] Utworzyć commit, tag `v0.4.0` i GitHub Release.

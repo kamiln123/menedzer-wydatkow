@@ -30,6 +30,14 @@ def initialize_database() -> None:
             )
             """
         )
+        connection.execute(
+            """
+            CREATE TABLE IF NOT EXISTS budgets (
+                month TEXT PRIMARY KEY,
+                limit_cents INTEGER NOT NULL CHECK (limit_cents > 0)
+            )
+            """
+        )
         connection.commit()
     finally:
         connection.close()
@@ -117,6 +125,105 @@ def get_months() -> list[str]:
             """
             SELECT DISTINCT substr(expense_date, 1, 7) AS month
             FROM expenses
+            ORDER BY month DESC
+            """
+        )
+        return [row["month"] for row in cursor.fetchall()]
+    finally:
+        connection.close()
+
+
+def save_budget(month: str, limit_cents: int) -> None:
+    """Zapisuje lub aktualizuje budżet dla wybranego miesiąca."""
+    connection = get_connection()
+
+    try:
+        connection.execute(
+            """
+            INSERT INTO budgets (month, limit_cents)
+            VALUES (?, ?)
+            ON CONFLICT(month) DO UPDATE SET
+                limit_cents = excluded.limit_cents
+            """,
+            (month, limit_cents),
+        )
+        connection.commit()
+    finally:
+        connection.close()
+
+
+def get_budget(month: str) -> int | None:
+    """Zwraca budżet miesiąca w groszach albo None, jeśli go nie ustawiono."""
+    connection = get_connection()
+
+    try:
+        cursor = connection.execute(
+            """
+            SELECT limit_cents
+            FROM budgets
+            WHERE month = ?
+            """,
+            (month,),
+        )
+        row = cursor.fetchone()
+
+        return None if row is None else row["limit_cents"]
+    finally:
+        connection.close()
+
+
+def get_expense_total(month: str | None = None) -> int:
+    """Zwraca sumę wydatków w groszach, opcjonalnie dla jednego miesiąca."""
+    connection = get_connection()
+
+    try:
+        query = "SELECT COALESCE(SUM(amount_cents), 0) AS total_cents FROM expenses"
+        parameters: list[str] = []
+
+        if month is not None:
+            query += " WHERE substr(expense_date, 1, 7) = ?"
+            parameters.append(month)
+
+        cursor = connection.execute(query, parameters)
+        row = cursor.fetchone()
+
+        return row["total_cents"]
+    finally:
+        connection.close()
+
+
+def get_budget_total(month: str | None = None) -> int:
+    """Zwraca sumę budżetów w groszach."""
+    connection = get_connection()
+
+    try:
+        query = "SELECT COALESCE(SUM(limit_cents), 0) AS total_cents FROM budgets"
+        parameters: list[str] = []
+
+        if month is not None:
+            query += " WHERE month = ?"
+            parameters.append(month)
+
+        cursor = connection.execute(query, parameters)
+        row = cursor.fetchone()
+
+        return row["total_cents"]
+    finally:
+        connection.close()
+
+
+def get_months_without_budget() -> list[str]:
+    """Zwraca miesiące z wydatkami, dla których nie ustawiono budżetu."""
+    connection = get_connection()
+
+    try:
+        cursor = connection.execute(
+            """
+            SELECT DISTINCT substr(expense.expense_date, 1, 7) AS month
+            FROM expenses AS expense
+            LEFT JOIN budgets AS budget
+                ON substr(expense.expense_date, 1, 7) = budget.month
+            WHERE budget.month IS NULL
             ORDER BY month DESC
             """
         )

@@ -78,6 +78,12 @@ Szczegółowy zakres: [Sprint 3 — Trwały zapis w SQLite](sprint-3.md).
 
 Szczegółowy zakres: [Sprint 4 — Tabela i filtrowanie wydatków](sprint-4.md).
 
+### Sprint 5 — Miesięczny budżet i podsumowanie (`v0.5.0`)
+
+**Cel:** użytkownik ustawia budżet i widzi podsumowanie wydatków dla miesiąca lub całego okresu.
+
+Szczegółowy zakres: [Sprint 5 — Miesięczny budżet i podsumowanie](sprint-5.md).
+
 ## Kryteria ukończenia MVP
 
 - Aplikację da się uruchomić według instrukcji w README.
