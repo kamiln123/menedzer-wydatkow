@@ -8,7 +8,9 @@ Projekt powstaje jako portfolio i praktyczny powrót do języka Python. Rozwijam
 
 Sprint 1 został opublikowany jako release `v0.1.0`, Sprint 2 — formularz oraz tymczasowa lista wydatków — jako release `v0.2.0`, Sprint 3 — trwały zapis SQLite — jako release `v0.3.0`, a Sprint 4 — tabela i filtry wydatków — jako release `v0.4.0`.
 
-Sprint 5 — miesięczny budżet i podsumowanie wydatków — jest ukończony lokalnie oraz sprawdzony ręcznie. Następny krok to commit, tag `v0.5.0` i publikacja GitHub Release.
+Sprint 5 — miesięczny budżet i podsumowanie wydatków — został opublikowany jako release `v0.5.0`.
+
+Kolejny etap: wykresy oraz dalsze dopracowanie walidacji.
 
 ## Planowany stos technologiczny
 

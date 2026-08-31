@@ -37,7 +37,7 @@ Pozwolić użytkownikowi ustawić budżet dla miesiąca oraz zobaczyć kwotę wy
 - [x] Obsłużyć przekroczony lub nieustawiony budżet.
 - [x] Ręcznie przetestować podsumowanie pojedynczego miesiąca i wszystkich miesięcy.
 - [x] Uzupełnić dokumentację.
-- [ ] Utworzyć commit, tag `v0.5.0` i GitHub Release.
+- [x] Utworzyć commit, tag `v0.5.0` i GitHub Release.
 
 ## Kryteria ukończenia
 

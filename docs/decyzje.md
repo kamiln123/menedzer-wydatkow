@@ -73,3 +73,9 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** Budżety zapisujemy w osobnej tabeli `budgets`, po jednym budżecie na miesiąc. Ponowny zapis dla tego samego miesiąca aktualizuje wcześniejszą wartość.
 
 **Uzasadnienie:** Budżet jest innym rodzajem danych niż wydatek i nie powinien być przechowywany w tabeli `expenses`. Ograniczenie jednego budżetu na miesiąc upraszcza model danych, a aktualizacja pozwala użytkownikowi zmienić limit bez tworzenia duplikatów.
+
+## 2026-08-31 — Piąta wersja projektu
+
+**Decyzja:** Sprint 5 został oznaczony tagiem `v0.5.0` i opublikowany jako GitHub Release.
+
+**Uzasadnienie:** Wersja zamyka etap budżetowania: użytkownik może trwale zapisać limit miesiąca i sprawdzić jego realizację w widoku pojedynczego miesiąca lub wszystkich danych.
