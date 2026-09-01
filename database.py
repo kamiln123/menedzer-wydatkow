@@ -230,3 +230,26 @@ def get_months_without_budget() -> list[str]:
         return [row["month"] for row in cursor.fetchall()]
     finally:
         connection.close()
+
+
+def get_category_totals(month: str | None = None) -> list[sqlite3.Row]:
+    """Zwraca sumy wydatków w groszach dla poszczególnych kategorii."""
+    connection = get_connection()
+
+    try:
+        query = """
+            SELECT category, SUM(amount_cents) AS total_cents
+            FROM expenses
+        """
+        parameters: list[str] = []
+
+        if month is not None:
+            query += " WHERE substr(expense_date, 1, 7) = ?"
+            parameters.append(month)
+
+        query += " GROUP BY category ORDER BY total_cents DESC, category ASC"
+
+        cursor = connection.execute(query, parameters)
+        return cursor.fetchall()
+    finally:
+        connection.close()

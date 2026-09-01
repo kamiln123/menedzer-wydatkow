@@ -3,6 +3,8 @@ from datetime import date
 
 import streamlit as st
 
+import plotly.express as px
+
 from database import (
     add_expense,
     get_categories,
@@ -14,10 +16,12 @@ from database import (
     get_budget_total,
     get_expense_total,
     get_months_without_budget,
+    get_category_totals,
 )
 
 
 st.set_page_config(page_title="Menedżer wydatków", page_icon="💰")
+MAX_DESCRIPTION_LENGTH = 200
 
 initialize_database()
 
@@ -123,6 +127,35 @@ if remaining_cents < 0:
         + "."
     )
 
+st.subheader("Wydatki według kategorii")
+
+category_totals = get_category_totals(month=month_filter)
+
+if not category_totals:
+    st.info("Brak danych do pokazania na wykresie.")
+else:
+    chart_rows = [
+        {
+            "Kategoria": row["category"],
+            "Kwota (zł)": row["total_cents"] / 100,
+        }
+        for row in category_totals
+    ]
+
+    figure = px.bar(
+        chart_rows,
+        x="Kategoria",
+        y="Kwota (zł)",
+        text_auto=".2f",
+        title="Wydatki według kategorii",
+    )
+    figure.update_layout(
+        xaxis_title="Kategoria",
+        yaxis_title="Kwota (zł)",
+    )
+
+    st.plotly_chart(figure, width="stretch")
+
 st.subheader("Dodaj wydatek")
 
 # Pola formularza są wysyłane razem po kliknięciu przycisku.
@@ -142,8 +175,15 @@ with st.form("expense_form"):
     submitted = st.form_submit_button("Dodaj wydatek")
 
 if submitted:
+    cleaned_description = description.strip()
+
     if amount <= 0:
         st.error("Kwota wydatku musi być większa od zera.")
+    elif len(cleaned_description) > MAX_DESCRIPTION_LENGTH:
+        st.error(
+            f"Opis wydatku może mieć maksymalnie "
+            f"{MAX_DESCRIPTION_LENGTH} znaków."
+        )
     else:
         amount_cents = int(round(amount * 100))
 
@@ -151,7 +191,7 @@ if submitted:
             amount_cents=amount_cents,
             category=category,
             expense_date=expense_date.isoformat(),
-            description=description,
+            description=cleaned_description,
         )
         st.success("Wydatek został dodany.")
 

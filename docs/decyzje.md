@@ -79,3 +79,9 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** Sprint 5 został oznaczony tagiem `v0.5.0` i opublikowany jako GitHub Release.
 
 **Uzasadnienie:** Wersja zamyka etap budżetowania: użytkownik może trwale zapisać limit miesiąca i sprawdzić jego realizację w widoku pojedynczego miesiąca lub wszystkich danych.
+
+## 2026-08-31 — Zakres wizualizacji w Sprint 6
+
+**Decyzja:** Używamy biblioteki Plotly do wykresu słupkowego wydatków według kategorii. Wykres reaguje wyłącznie na filtr miesiąca, a nie na filtr kategorii. Opis wydatku będzie oczyszczany z początkowych i końcowych spacji oraz ograniczony do 200 znaków.
+
+**Uzasadnienie:** Plotly tworzy czytelne, interaktywne wykresy przydatne w portfolio. Wykres ma przedstawiać pełną strukturę wydatków wybranego miesiąca, więc zawężenie go do jednej kategorii byłoby mało użyteczne. Limit opisu zapobiega przypadkowo zbyt długim wpisom.

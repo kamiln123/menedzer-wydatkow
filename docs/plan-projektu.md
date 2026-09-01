@@ -84,6 +84,12 @@ Szczegółowy zakres: [Sprint 4 — Tabela i filtrowanie wydatków](sprint-4.md)
 
 Szczegółowy zakres: [Sprint 5 — Miesięczny budżet i podsumowanie](sprint-5.md).
 
+### Sprint 6 — Wykres kategorii i walidacja (`v0.6.0`)
+
+**Cel:** użytkownik widzi wykres wydatków według kategorii, a opis wydatku jest uporządkowany i ograniczony do rozsądnej długości.
+
+Szczegółowy zakres: [Sprint 6 — Wykres kategorii i walidacja](sprint-6.md).
+
 ## Kryteria ukończenia MVP
 
 - Aplikację da się uruchomić według instrukcji w README.
