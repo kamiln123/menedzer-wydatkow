@@ -85,3 +85,9 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** Używamy biblioteki Plotly do wykresu słupkowego wydatków według kategorii. Wykres reaguje wyłącznie na filtr miesiąca, a nie na filtr kategorii. Opis wydatku będzie oczyszczany z początkowych i końcowych spacji oraz ograniczony do 200 znaków.
 
 **Uzasadnienie:** Plotly tworzy czytelne, interaktywne wykresy przydatne w portfolio. Wykres ma przedstawiać pełną strukturę wydatków wybranego miesiąca, więc zawężenie go do jednej kategorii byłoby mało użyteczne. Limit opisu zapobiega przypadkowo zbyt długim wpisom.
+
+## 2026-09-01 — Szósta wersja projektu
+
+**Decyzja:** Sprint 6 został oznaczony tagiem `v0.6.0` i opublikowany jako GitHub Release.
+
+**Uzasadnienie:** Wersja rozwija część analityczną aplikacji o interaktywną wizualizację oraz wzmacnia jakość danych przez walidację opisu wydatku.

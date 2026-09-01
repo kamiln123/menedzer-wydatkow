@@ -19,7 +19,7 @@ Numer wersji ma postać `vMAJOR.MINOR.PATCH`:
 | 3 | `v0.3.0` | Wydatki są trwale zapisywane w SQLite. **Ukończono i opublikowano 2026-08-19.** |
 | 4 | `v0.4.0` | Jest tabela wydatków oraz filtry kategorii i miesiąca. **Ukończono i opublikowano 2026-08-21.** |
 | 5 | `v0.5.0` | Działa budżet miesięczny i podsumowanie. **Ukończono i opublikowano 2026-08-31.** |
-| 6 | `v0.6.0` | Są wykresy oraz dopracowana walidacja. |
+| 6 | `v0.6.0` | Są wykresy oraz dopracowana walidacja. **Ukończono i opublikowano 2026-09-01.** |
 | 7 | `v1.0.0` | MVP ma testy, kompletne README i jest gotowe do pokazania w portfolio. |
 
 ## Informacje potrzebne przed pierwszym publikowaniem

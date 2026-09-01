@@ -38,7 +38,7 @@ Pokazać użytkownikowi strukturę wydatków według kategorii oraz dopracować 
 - [x] Odrzucać opis dłuższy niż 200 znaków.
 - [x] Ręcznie przetestować wykres i walidację.
 - [x] Uzupełnić dokumentację.
-- [ ] Utworzyć commit, tag `v0.6.0` i GitHub Release.
+- [x] Utworzyć commit, tag `v0.6.0` i GitHub Release.
 
 ## Kryteria ukończenia
 
