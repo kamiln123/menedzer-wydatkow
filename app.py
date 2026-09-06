@@ -19,9 +19,8 @@ from database import (
     get_category_totals,
 )
 
-
-st.set_page_config(page_title="Menedżer wydatków", page_icon="💰")
 MAX_DESCRIPTION_LENGTH = 200
+st.set_page_config(page_title="Menedżer wydatków", page_icon="💰")
 
 initialize_database()
 
@@ -147,7 +146,6 @@ else:
         x="Kategoria",
         y="Kwota (zł)",
         text_auto=".2f",
-        title="Wydatki według kategorii",
     )
     figure.update_layout(
         xaxis_title="Kategoria",

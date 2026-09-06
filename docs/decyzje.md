@@ -91,3 +91,15 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** Sprint 6 został oznaczony tagiem `v0.6.0` i opublikowany jako GitHub Release.
 
 **Uzasadnienie:** Wersja rozwija część analityczną aplikacji o interaktywną wizualizację oraz wzmacnia jakość danych przez walidację opisu wydatku.
+
+## 2026-09-01 — Zakres Sprintu 7
+
+**Decyzja:** Przed wydaniem `v1.0.0` dodajemy automatyczne testy w pytest oraz uzupełniamy materiały portfolio: README i zrzuty ekranu aplikacji. Testy będą korzystać z osobnej, tymczasowej bazy danych.
+
+**Uzasadnienie:** Testy automatyczne dają powtarzalne potwierdzenie poprawności logiki bez ryzyka zmiany prawdziwych danych użytkownika. Zrzuty ekranu i kompletne README pozwolą odbiorcy repozytorium szybko ocenić działanie projektu.
+
+## 2026-09-06 — Rozszerzenie drogi do MVP
+
+**Decyzja:** Sprint 7 publikujemy jako `v0.7.0` z testami i materiałami portfolio. Edycję oraz usuwanie wydatków realizujemy w Sprincie 8 jako `v0.8.0`, a końcowy audyt i kompletne MVP w Sprincie 9 jako `v1.0.0`.
+
+**Uzasadnienie:** Pierwotny zakres MVP obejmuje edycję i usuwanie, których obecna aplikacja jeszcze nie obsługuje. Oddzielne wersje zachowują czytelną historię rozwoju i zapobiegają przedwczesnemu oznaczeniu projektu jako ukończonego.

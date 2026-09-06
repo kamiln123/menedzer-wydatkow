@@ -90,6 +90,20 @@ Szczegółowy zakres: [Sprint 5 — Miesięczny budżet i podsumowanie](sprint-5
 
 Szczegółowy zakres: [Sprint 6 — Wykres kategorii i walidacja](sprint-6.md).
 
+### Sprint 7 — Testy automatyczne i materiały portfolio (`v0.7.0`)
+
+**Cel:** potwierdzić automatycznymi testami najważniejszą logikę i dodać pierwsze materiały prezentujące aplikację.
+
+Szczegółowy zakres: [Sprint 7 — Testy automatyczne i materiały portfolio](sprint-7.md).
+
+### Sprint 8 — Edycja i usuwanie wydatków (`v0.8.0`)
+
+**Cel:** użytkownik może poprawić błędnie zapisany wydatek albo bezpiecznie go usunąć.
+
+### Sprint 9 — Finalizacja MVP (`v1.0.0`)
+
+**Cel:** sprawdzić cały projekt, zaktualizować testy i dokumentację oraz przygotować końcową prezentację portfolio.
+
 ## Kryteria ukończenia MVP
 
 - Aplikację da się uruchomić według instrukcji w README.

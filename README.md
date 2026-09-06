@@ -1,25 +1,83 @@
 # Menedżer wydatków
 
-Aplikacja webowa do prostego zapisywania wydatków, śledzenia budżetu i przeglądania miesięcznych statystyk.
+Aplikacja webowa do zapisywania wydatków, kontrolowania miesięcznego budżetu i analizowania kosztów według kategorii.
 
-Projekt powstaje jako portfolio i praktyczny powrót do języka Python. Rozwijamy go iteracyjnie: najpierw sprawnie działająca, niewielka wersja, potem kolejne usprawnienia.
+Projekt powstaje jako portfolio i praktyczny powrót do języka Python. Jest rozwijany iteracyjnie, a każdy ukończony sprint otrzymuje osobny tag i GitHub Release.
 
-## Status
+## Status projektu
 
-Sprint 1 został opublikowany jako release `v0.1.0`, Sprint 2 — formularz oraz tymczasowa lista wydatków — jako release `v0.2.0`, Sprint 3 — trwały zapis SQLite — jako release `v0.3.0`, a Sprint 4 — tabela i filtry wydatków — jako release `v0.4.0`.
+Opublikowane wersje obejmują formularz wydatków, trwały zapis SQLite, filtrowanie, miesięczne budżety, podsumowania i wykres Plotly. Automatyczne testy są ukończone lokalnie i przygotowywane do publikacji jako `v0.7.0`.
 
-Sprint 5 — miesięczny budżet i podsumowanie wydatków — został opublikowany jako release `v0.5.0`, a Sprint 6 — wykres kategorii i walidacja opisu — jako release `v0.6.0`.
+Przed wydaniem pełnego MVP `v1.0.0` zostaną jeszcze dodane edycja oraz usuwanie wydatków.
 
-Kolejny etap: testy automatyczne oraz przygotowanie projektu do prezentacji w portfolio.
+## Funkcje
 
-## Planowany stos technologiczny
+- dodawanie wydatku z kwotą, kategorią, datą i opcjonalnym opisem;
+- walidacja kwoty oraz długości opisu;
+- trwały zapis danych w lokalnej bazie SQLite;
+- filtrowanie tabeli według kategorii i miesiąca;
+- ustawianie oraz aktualizowanie miesięcznego budżetu;
+- podsumowanie wydatków, budżetu i pozostałej kwoty;
+- ostrzeżenia o braku lub przekroczeniu budżetu;
+- interaktywny wykres wydatków według kategorii;
+- automatyczne testy logiki bazy danych w pytest.
+
+## Zrzuty ekranu
+
+### Podsumowanie budżetu
+
+![Podsumowanie budżetu](docs/images/budget-summary.png)
+
+### Wydatki według kategorii
+
+![Wykres wydatków według kategorii](docs/images/category-chart.png)
+
+### Filtrowanie zapisanych wydatków
+
+![Przefiltrowana tabela wydatków](docs/images/filtered-expenses.png)
+
+## Technologie
 
 - Python 3.12+
-- Streamlit — prosty interfejs webowy
+- Streamlit — interfejs webowy
 - SQLite — lokalna baza danych
-- SQLAlchemy — komunikacja z bazą danych
-- pandas i Plotly — analizy oraz wykresy
+- Plotly — interaktywny wykres
 - pytest — testy automatyczne
+- Git i GitHub — historia zmian oraz publikowanie wersji
+
+## Uruchomienie na Windows
+
+Wymagane są Python 3.12 lub nowszy oraz Git.
+
+```powershell
+git clone https://github.com/kamiln123/menedzer-wydatkow.git
+cd menedzer-wydatkow
+py -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m streamlit run app.py
+```
+
+Po uruchomieniu aplikacja będzie dostępna w przeglądarce, zwykle pod adresem `http://localhost:8501`.
+
+Baza `data/expenses.db` jest tworzona automatycznie. Folder z lokalnymi danymi jest ignorowany przez Git i nie trafia do repozytorium.
+
+## Testy
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest -v
+```
+
+Testy korzystają z oddzielnej, tymczasowej bazy SQLite. Nie odczytują ani nie zmieniają danych zapisanych przez aplikację.
+
+## Struktura projektu
+
+```text
+app.py                  interfejs aplikacji Streamlit
+database.py             operacje na bazie SQLite
+tests/test_database.py  automatyczne testy bazy danych
+docs/                   dokumentacja sprintów i decyzji
+requirements.txt        zależności środowiska Python
+```
 
 ## Dokumentacja
 
@@ -27,11 +85,8 @@ Kolejny etap: testy automatyczne oraz przygotowanie projektu do prezentacji w po
 - [Dziennik decyzji](docs/decyzje.md)
 - [Sprinty i wersje](docs/sprinty-i-wersje.md)
 
-## Uruchamianie (po przygotowaniu środowiska)
+## Dalszy plan
 
-```powershell
-.\.venv\Scripts\Activate.ps1
-python -m streamlit run app.py
-```
-
-Po uruchomieniu aplikacja będzie dostępna w przeglądarce, zwykle pod adresem `http://localhost:8501`.
+- `v0.7.0` — automatyczne testy i materiały portfolio;
+- `v0.8.0` — edycja i usuwanie wydatków;
+- `v1.0.0` — końcowy przegląd i kompletne MVP.
