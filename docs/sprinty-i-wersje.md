@@ -20,7 +20,7 @@ Numer wersji ma postać `vMAJOR.MINOR.PATCH`:
 | 4 | `v0.4.0` | Jest tabela wydatków oraz filtry kategorii i miesiąca. **Ukończono i opublikowano 2026-08-21.** |
 | 5 | `v0.5.0` | Działa budżet miesięczny i podsumowanie. **Ukończono i opublikowano 2026-08-31.** |
 | 6 | `v0.6.0` | Są wykresy oraz dopracowana walidacja. **Ukończono i opublikowano 2026-09-01.** |
-| 7 | `v0.7.0` | Projekt ma automatyczne testy oraz pierwsze materiały portfolio. **W trakcie.** |
+| 7 | `v0.7.0` | Projekt ma automatyczne testy oraz pierwsze materiały portfolio. **Ukończono i opublikowano 2026-09-06.** |
 | 8 | `v0.8.0` | Użytkownik może edytować i usuwać zapisane wydatki. |
 | 9 | `v1.0.0` | MVP przechodzi końcowy audyt i jest gotowe do pokazania w portfolio. |
 

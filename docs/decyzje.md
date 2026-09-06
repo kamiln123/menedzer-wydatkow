@@ -103,3 +103,9 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** Sprint 7 publikujemy jako `v0.7.0` z testami i materiałami portfolio. Edycję oraz usuwanie wydatków realizujemy w Sprincie 8 jako `v0.8.0`, a końcowy audyt i kompletne MVP w Sprincie 9 jako `v1.0.0`.
 
 **Uzasadnienie:** Pierwotny zakres MVP obejmuje edycję i usuwanie, których obecna aplikacja jeszcze nie obsługuje. Oddzielne wersje zachowują czytelną historię rozwoju i zapobiegają przedwczesnemu oznaczeniu projektu jako ukończonego.
+
+## 2026-09-06 — Siódma wersja projektu
+
+**Decyzja:** Sprint 7 został oznaczony tagiem `v0.7.0` i opublikowany jako GitHub Release.
+
+**Uzasadnienie:** Wersja dodaje pięć odizolowanych testów automatycznych oraz pierwszą kompletną prezentację projektu w README ze zrzutami ekranu.

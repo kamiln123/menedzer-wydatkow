@@ -6,7 +6,7 @@ Projekt powstaje jako portfolio i praktyczny powrót do języka Python. Jest roz
 
 ## Status projektu
 
-Opublikowane wersje obejmują formularz wydatków, trwały zapis SQLite, filtrowanie, miesięczne budżety, podsumowania i wykres Plotly. Automatyczne testy są ukończone lokalnie i przygotowywane do publikacji jako `v0.7.0`.
+Opublikowane wersje obejmują formularz wydatków, trwały zapis SQLite, filtrowanie, miesięczne budżety, podsumowania i wykres Plotly. Sprint 7 z automatycznymi testami oraz materiałami portfolio został opublikowany jako `v0.7.0`.
 
 Przed wydaniem pełnego MVP `v1.0.0` zostaną jeszcze dodane edycja oraz usuwanie wydatków.
 
@@ -87,6 +87,6 @@ requirements.txt        zależności środowiska Python
 
 ## Dalszy plan
 
-- `v0.7.0` — automatyczne testy i materiały portfolio;
+- `v0.7.0` — automatyczne testy i materiały portfolio — opublikowano;
 - `v0.8.0` — edycja i usuwanie wydatków;
 - `v1.0.0` — końcowy przegląd i kompletne MVP.

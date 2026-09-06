@@ -29,7 +29,7 @@ Dodać powtarzalne testy najważniejszej logiki oraz przygotować pierwszą prez
 - [x] Uzupełnić README o opis projektu, uruchamianie i testy.
 - [x] Wykonać i dodać trzy zrzuty ekranu.
 - [x] Uzupełnić dokumentację.
-- [ ] Utworzyć commit, tag `v0.7.0` i GitHub Release.
+- [x] Utworzyć commit, tag `v0.7.0` i GitHub Release.
 
 ## Kryteria ukończenia
 
