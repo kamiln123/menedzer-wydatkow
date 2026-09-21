@@ -42,7 +42,7 @@ Pozwolić użytkownikowi poprawić istniejący wydatek albo bezpiecznie usunąć
 - [x] Uruchomić testy automatyczne — 7 testów zakończonych powodzeniem.
 - [x] Ręcznie przetestować edycję i usuwanie.
 - [x] Uzupełnić dokumentację.
-- [ ] Utworzyć commit, tag `v0.8.0` i GitHub Release.
+- [x] Utworzyć commit, tag `v0.8.0` i GitHub Release.
 
 ## Kryteria ukończenia
 
@@ -51,3 +51,4 @@ Pozwolić użytkownikowi poprawić istniejący wydatek albo bezpiecznie usunąć
 - Nie można zapisać niepoprawnej kwoty ani zbyt długiego opisu.
 - Nie można usunąć rekordu bez potwierdzenia.
 - Wszystkie testy automatyczne przechodzą.
+- Repozytorium ma release `v0.8.0`.

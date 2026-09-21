@@ -115,3 +115,9 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** Edycja i usuwanie znajdą się w osobnej sekcji pod tabelą. Użytkownik wybierze jeden z aktualnie widocznych wydatków, otrzyma formularz z jego wartościami, a usunięcie będzie wymagało dodatkowego potwierdzenia.
 
 **Uzasadnienie:** Oddzielny formularz jest czytelniejszy dla początkującego użytkownika niż edycja bezpośrednio w tabeli. Ograniczenie listy do widocznych rekordów zachowuje zgodność z filtrami, a potwierdzenie zmniejsza ryzyko przypadkowego usunięcia danych.
+
+## 2026-09-21 — Ósma wersja projektu
+
+**Decyzja:** Sprint 8 został oznaczony tagiem `v0.8.0` i opublikowany jako GitHub Release.
+
+**Uzasadnienie:** Wersja uzupełnia zakres funkcjonalny MVP o edycję oraz bezpieczne, dwuetapowe usuwanie wydatków. Dwa nowe testy automatyczne potwierdzają poprawność operacji na bazie danych.
