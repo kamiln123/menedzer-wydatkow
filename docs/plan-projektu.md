@@ -100,6 +100,8 @@ Szczegółowy zakres: [Sprint 7 — Testy automatyczne i materiały portfolio](s
 
 **Cel:** użytkownik może poprawić błędnie zapisany wydatek albo bezpiecznie go usunąć.
 
+Szczegółowy zakres: [Sprint 8 — Edycja i usuwanie wydatków](sprint-8.md).
+
 ### Sprint 9 — Finalizacja MVP (`v1.0.0`)
 
 **Cel:** sprawdzić cały projekt, zaktualizować testy i dokumentację oraz przygotować końcową prezentację portfolio.

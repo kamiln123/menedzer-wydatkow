@@ -8,11 +8,13 @@ Projekt powstaje jako portfolio i praktyczny powrót do języka Python. Jest roz
 
 Opublikowane wersje obejmują formularz wydatków, trwały zapis SQLite, filtrowanie, miesięczne budżety, podsumowania i wykres Plotly. Sprint 7 z automatycznymi testami oraz materiałami portfolio został opublikowany jako `v0.7.0`.
 
-Przed wydaniem pełnego MVP `v1.0.0` zostaną jeszcze dodane edycja oraz usuwanie wydatków.
+W przygotowywanej wersji `v0.8.0` aplikacja otrzymała edycję oraz bezpieczne usuwanie wydatków. Przed wydaniem pełnego MVP `v1.0.0` pozostanie końcowy przegląd projektu.
 
 ## Funkcje
 
 - dodawanie wydatku z kwotą, kategorią, datą i opcjonalnym opisem;
+- edytowanie istniejących wydatków bez tworzenia duplikatów;
+- usuwanie wydatków z dodatkowym potwierdzeniem;
 - walidacja kwoty oraz długości opisu;
 - trwały zapis danych w lokalnej bazie SQLite;
 - filtrowanie tabeli według kategorii i miesiąca;

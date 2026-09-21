@@ -65,6 +65,53 @@ def add_expense(
         connection.close()
 
 
+def update_expense(
+    expense_id: int,
+    amount_cents: int,
+    category: str,
+    expense_date: str,
+    description: str,
+) -> None:
+    """Aktualizuje istniejący wydatek w bazie danych."""
+    connection = get_connection()
+
+    try:
+        connection.execute(
+            """
+            UPDATE expenses
+            SET amount_cents = ?,
+                category = ?,
+                expense_date = ?,
+                description = ?
+            WHERE id = ?
+            """,
+            (
+                amount_cents,
+                category,
+                expense_date,
+                description,
+                expense_id,
+            ),
+        )
+        connection.commit()
+    finally:
+        connection.close()
+
+
+def delete_expense(expense_id: int) -> None:
+    """Usuwa wydatek o podanym identyfikatorze."""
+    connection = get_connection()
+
+    try:
+        connection.execute(
+            "DELETE FROM expenses WHERE id = ?",
+            (expense_id,),
+        )
+        connection.commit()
+    finally:
+        connection.close()
+
+
 def get_expenses(
     category: str | None = None,
     month: str | None = None,

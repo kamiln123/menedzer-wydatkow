@@ -146,3 +146,58 @@ def test_get_category_totals_returns_sums_for_month(test_database):
         ("Jedzenie", 1500),
     ]
     assert empty_totals == []
+
+
+def test_update_expense_changes_existing_record(test_database):
+    """Aktualizacja zmienia rekord i nie tworzy duplikatu."""
+    database.add_expense(
+        amount_cents=1000,
+        category="Jedzenie",
+        expense_date="2026-09-01",
+        description="stary opis",
+    )
+    expense_id = database.get_expenses()[0]["id"]
+
+    database.update_expense(
+        expense_id=expense_id,
+        amount_cents=2500,
+        category="Transport",
+        expense_date="2026-09-02",
+        description="bilet miesięczny",
+    )
+
+    expenses = database.get_expenses()
+    updated_expense = expenses[0]
+
+    assert len(expenses) == 1
+    assert updated_expense["id"] == expense_id
+    assert updated_expense["amount_cents"] == 2500
+    assert updated_expense["category"] == "Transport"
+    assert updated_expense["expense_date"] == "2026-09-02"
+    assert updated_expense["description"] == "bilet miesięczny"
+
+
+def test_delete_expense_removes_only_selected_record(test_database):
+    """Usunięcie kasuje tylko wybrany wydatek."""
+    database.add_expense(
+        amount_cents=1000,
+        category="Jedzenie",
+        expense_date="2026-09-01",
+        description="do usunięcia",
+    )
+    expense_id = database.get_expenses()[0]["id"]
+
+    database.add_expense(
+        amount_cents=2000,
+        category="Transport",
+        expense_date="2026-09-02",
+        description="pozostaje",
+    )
+
+    database.delete_expense(expense_id)
+
+    expenses = database.get_expenses()
+
+    assert len(expenses) == 1
+    assert expenses[0]["description"] == "pozostaje"
+    assert expenses[0]["id"] != expense_id

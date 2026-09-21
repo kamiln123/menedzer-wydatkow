@@ -109,3 +109,9 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** Sprint 7 został oznaczony tagiem `v0.7.0` i opublikowany jako GitHub Release.
 
 **Uzasadnienie:** Wersja dodaje pięć odizolowanych testów automatycznych oraz pierwszą kompletną prezentację projektu w README ze zrzutami ekranu.
+
+## 2026-09-06 — Interfejs zarządzania wydatkiem
+
+**Decyzja:** Edycja i usuwanie znajdą się w osobnej sekcji pod tabelą. Użytkownik wybierze jeden z aktualnie widocznych wydatków, otrzyma formularz z jego wartościami, a usunięcie będzie wymagało dodatkowego potwierdzenia.
+
+**Uzasadnienie:** Oddzielny formularz jest czytelniejszy dla początkującego użytkownika niż edycja bezpośrednio w tabeli. Ograniczenie listy do widocznych rekordów zachowuje zgodność z filtrami, a potwierdzenie zmniejsza ryzyko przypadkowego usunięcia danych.

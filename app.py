@@ -1,9 +1,8 @@
 """Interfejs aplikacji Menedżer wydatków."""
 from datetime import date
 
-import streamlit as st
-
 import plotly.express as px
+import streamlit as st
 
 from database import (
     add_expense,
@@ -17,9 +16,20 @@ from database import (
     get_expense_total,
     get_months_without_budget,
     get_category_totals,
+    update_expense,
+    delete_expense,
 )
 
+CATEGORIES = [
+    "Jedzenie",
+    "Transport",
+    "Rachunki",
+    "Rozrywka",
+    "Zdrowie",
+    "Inne",
+]
 MAX_DESCRIPTION_LENGTH = 200
+
 st.set_page_config(page_title="Menedżer wydatków", page_icon="💰")
 
 initialize_database()
@@ -166,7 +176,7 @@ with st.form("expense_form"):
     )
     category = st.selectbox(
         "Kategoria",
-        ["Jedzenie", "Transport", "Rachunki", "Rozrywka", "Zdrowie", "Inne"],
+        CATEGORIES,
     )
     expense_date = st.date_input("Data")
     description = st.text_input("Opis (opcjonalnie)")
@@ -200,8 +210,16 @@ expenses = get_expenses(
     month=month_filter,
 )
 
+management_success_message = st.session_state.pop(
+    "success_message",
+    None,
+)
 if not expenses:
     st.info("Nie dodano jeszcze żadnych wydatków.")
+
+    if management_success_message:
+        st.success(management_success_message)
+
 else:
     table_rows = []
 
@@ -221,3 +239,143 @@ else:
 
     st.dataframe(table_rows, hide_index=True)
     st.caption(f"Widoczne wydatki: {len(expenses)}")
+    st.subheader("Zarządzaj wydatkiem")
+
+    if management_success_message:
+        st.success(management_success_message)
+
+    expense_options = {}
+
+    for expense in expenses:
+        option_date = date.fromisoformat(
+            expense["expense_date"]
+        ).strftime("%d.%m.%Y")
+
+        option_label = (
+            f"#{expense['id']} | "
+            f"{option_date} | "
+            f"{expense['category']} | "
+            f"{format_currency(expense['amount_cents'])}"
+        )
+        expense_options[option_label] = expense
+
+    selected_expense_label = st.selectbox(
+        "Wybierz wydatek",
+        options=list(expense_options.keys()),
+    )
+    selected_expense = expense_options[selected_expense_label]
+    selected_expense_date = date.fromisoformat(
+        selected_expense["expense_date"]
+    )
+    selected_category_index = CATEGORIES.index(
+        selected_expense["category"]
+    )
+
+    with st.form(f"edit_expense_form_{selected_expense['id']}"):
+        edited_amount = st.number_input(
+            "Nowa kwota (zł)",
+            min_value=0.0,
+            value=selected_expense["amount_cents"] / 100,
+            step=0.01,
+            format="%.2f",
+            key=f"edit_amount_{selected_expense['id']}",
+        )
+        edited_category = st.selectbox(
+            "Nowa kategoria",
+            CATEGORIES,
+            index=selected_category_index,
+            key=f"edit_category_{selected_expense['id']}",
+        )
+        edited_date = st.date_input(
+            "Nowa data",
+            value=selected_expense_date,
+            key=f"edit_date_{selected_expense['id']}",
+        )
+        edited_description = st.text_input(
+            "Nowy opis (opcjonalnie)",
+            value=selected_expense["description"],
+            key=f"edit_description_{selected_expense['id']}",
+        )
+        save_column, delete_column = st.columns(2)
+
+        with save_column:
+            edit_submitted = st.form_submit_button(
+                "Zapisz zmiany",
+                type="primary",
+                width="stretch",
+            )
+
+        with delete_column:
+            delete_requested = st.form_submit_button(
+                "Usuń wydatek",
+                width="stretch",
+            )
+
+    if delete_requested:
+        st.session_state.pending_delete_id = selected_expense["id"]
+
+    if edit_submitted:
+        st.session_state.pop("pending_delete_id", None)
+        cleaned_edited_description = edited_description.strip()
+
+        if edited_amount <= 0:
+            st.error("Kwota wydatku musi być większa od zera.")
+        elif len(cleaned_edited_description) > MAX_DESCRIPTION_LENGTH:
+            st.error(
+                f"Opis wydatku może mieć maksymalnie "
+                f"{MAX_DESCRIPTION_LENGTH} znaków."
+            )
+        else:
+            update_expense(
+                expense_id=selected_expense["id"],
+                amount_cents=int(round(edited_amount * 100)),
+                category=edited_category,
+                expense_date=edited_date.isoformat(),
+                description=cleaned_edited_description,
+            )
+            st.session_state.success_message = (
+                "Wydatek został zaktualizowany."
+            )
+            st.rerun()
+
+    pending_delete_id = st.session_state.get("pending_delete_id")
+
+    if (
+        pending_delete_id is not None
+        and pending_delete_id != selected_expense["id"]
+    ):
+        st.session_state.pop("pending_delete_id")
+        pending_delete_id = None
+
+    if pending_delete_id == selected_expense["id"]:
+        st.warning(
+            "Czy na pewno chcesz trwale usunąć wybrany wydatek?"
+        )
+
+        confirm_column, cancel_column = st.columns(2)
+
+        with confirm_column:
+            confirm_delete_clicked = st.button(
+                "Tak, usuń",
+                type="primary",
+                width="stretch",
+                key=f"confirm_delete_{selected_expense['id']}",
+            )
+
+        with cancel_column:
+            cancel_delete_clicked = st.button(
+                "Anuluj",
+                width="stretch",
+                key=f"cancel_delete_{selected_expense['id']}",
+            )
+
+        if confirm_delete_clicked:
+            delete_expense(selected_expense["id"])
+            st.session_state.pop("pending_delete_id", None)
+            st.session_state.success_message = (
+                "Wydatek został usunięty."
+            )
+            st.rerun()
+        elif cancel_delete_clicked:
+            st.session_state.pop("pending_delete_id", None)
+            st.rerun()
