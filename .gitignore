@@ -12,3 +12,7 @@ data/
 
 # Sekrety aplikacji
 .streamlit/secrets.toml
+
+# Pliki techniczne pytest
+.pytest_cache/
+.pytest-tmp/

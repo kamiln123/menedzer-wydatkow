@@ -87,6 +87,10 @@ requirements.txt        zależności środowiska Python
 - [Dziennik decyzji](docs/decyzje.md)
 - [Sprinty i wersje](docs/sprinty-i-wersje.md)
 
+## Licencja
+
+Projekt jest udostępniany na licencji MIT. Szczegóły znajdują się w pliku [LICENSE](LICENSE).
+
 ## Dalszy plan
 
 - `v0.7.0` — automatyczne testy i materiały portfolio — opublikowano;

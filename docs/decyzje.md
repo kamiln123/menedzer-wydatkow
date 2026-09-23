@@ -121,3 +121,15 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** Sprint 8 został oznaczony tagiem `v0.8.0` i opublikowany jako GitHub Release.
 
 **Uzasadnienie:** Wersja uzupełnia zakres funkcjonalny MVP o edycję oraz bezpieczne, dwuetapowe usuwanie wydatków. Dwa nowe testy automatyczne potwierdzają poprawność operacji na bazie danych.
+
+## 2026-09-23 — Zakres finalizacji MVP
+
+**Decyzja:** Sprint 9 kończy projekt wersją `v1.0.0`. Obejmuje końcowy audyt, poprawkę odświeżania po dodaniu wydatku, automatyczne testy na GitHubie, aktualny zrzut ekranu oraz pełną kontrolę kodu i dokumentacji. Publiczne wdrożenie pozostaje poza MVP.
+
+**Uzasadnienie:** Lokalna aplikacja z SQLite spełnia przyjęty cel projektu portfolio. GitHub Actions zwiększa wiarygodność testów, a ograniczenie sprintu do jakości i prezentacji zapobiega rozszerzaniu ukończonego zakresu biznesowego.
+
+## 2026-09-23 — Licencja projektu
+
+**Decyzja:** Projekt zostaje udostępniony na licencji MIT, a właścicielem praw autorskich wskazanym w pliku licencji jest Kamil Napora.
+
+**Uzasadnienie:** Jawna, powszechnie rozpoznawalna licencja jasno określa zasady używania kodu i zwiększa kompletność publicznego repozytorium portfolio.

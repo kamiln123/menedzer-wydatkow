@@ -54,7 +54,7 @@ Te funkcje są wartościowe, ale zostawiamy je na później, aby projekt szybko 
 - [x] Utworzenie dokumentacji startowej.
 - [x] Dodanie punktu startowego aplikacji `app.py`.
 - [x] Dodanie listy zależności.
-- [ ] Dodanie zasad ignorowania plików lokalnych (`.gitignore`).
+- [x] Dodanie zasad ignorowania plików lokalnych (`.gitignore`).
 - [x] Utworzenie wirtualnego środowiska Python (`.venv`).
 - [x] Instalacja Streamlit.
 - [x] Lokalne uruchomienie aplikacji.
@@ -106,6 +106,8 @@ Szczegółowy zakres: [Sprint 8 — Edycja i usuwanie wydatków](sprint-8.md).
 
 **Cel:** sprawdzić cały projekt, zaktualizować testy i dokumentację oraz przygotować końcową prezentację portfolio.
 
+Szczegółowy zakres: [Sprint 9 — Finalizacja MVP](sprint-9.md).
+
 ## Kryteria ukończenia MVP
 
 - Aplikację da się uruchomić według instrukcji w README.
@@ -118,7 +120,7 @@ Szczegółowy zakres: [Sprint 8 — Edycja i usuwanie wydatków](sprint-8.md).
 
 | Obszar | Praktyka w projekcie |
 | --- | --- |
-| Python | funkcje, klasy, moduły, obsługa błędów, typowanie |
+| Python | funkcje, moduły, obsługa błędów i typowanie |
 | Dane | SQLite, modele danych, zapytania i walidacja |
 | Web | interfejs Streamlit, formularze, stan aplikacji |
 | Jakość | Git, testy pytest, formatowanie i dokumentacja |

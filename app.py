@@ -165,9 +165,16 @@ else:
     st.plotly_chart(figure, width="stretch")
 
 st.subheader("Dodaj wydatek")
+add_success_message = st.session_state.pop(
+    "add_success_message",
+    None,
+)
+
+if add_success_message:
+    st.success(add_success_message)
 
 # Pola formularza są wysyłane razem po kliknięciu przycisku.
-with st.form("expense_form"):
+with st.form("expense_form", clear_on_submit=True):
     amount = st.number_input(
         "Kwota (zł)",
         min_value=0.0,
@@ -201,7 +208,10 @@ if submitted:
             expense_date=expense_date.isoformat(),
             description=cleaned_description,
         )
-        st.success("Wydatek został dodany.")
+        st.session_state.add_success_message = (
+            "Wydatek został dodany."
+        )
+        st.rerun()
 
 st.subheader("Zapisane wydatki")
 
