@@ -1,5 +1,7 @@
 # Menedżer wydatków
 
+[![Tests](https://github.com/kamiln123/menedzer-wydatkow/actions/workflows/tests.yml/badge.svg)](https://github.com/kamiln123/menedzer-wydatkow/actions/workflows/tests.yml)
+
 Aplikacja webowa do zapisywania wydatków, kontrolowania miesięcznego budżetu i analizowania kosztów według kategorii.
 
 Projekt powstaje jako portfolio i praktyczny powrót do języka Python. Jest rozwijany iteracyjnie, a każdy ukończony sprint otrzymuje osobny tag i GitHub Release.
@@ -34,9 +36,17 @@ Przed wydaniem pełnego MVP `v1.0.0` pozostaje końcowy przegląd projektu.
 
 ![Wykres wydatków według kategorii](docs/images/category-chart.png)
 
+### Dodawanie wydatku
+
+![Formularz dodawania wydatku](docs/images/add_expense.png)
+
 ### Filtrowanie zapisanych wydatków
 
 ![Przefiltrowana tabela wydatków](docs/images/filtered-expenses.png)
+
+### Edycja i bezpieczne usuwanie
+
+![Zarządzanie wybranym wydatkiem](docs/images/expense-management.png)
 
 ## Technologie
 
@@ -46,6 +56,22 @@ Przed wydaniem pełnego MVP `v1.0.0` pozostaje końcowy przegląd projektu.
 - Plotly — interaktywny wykres
 - pytest — testy automatyczne
 - Git i GitHub — historia zmian oraz publikowanie wersji
+
+## Architektura
+
+- `app.py` odpowiada za interfejs Streamlit, walidację formularzy i prezentację danych;
+- `database.py` oddziela operacje SQLite od interfejsu i korzysta z parametryzowanych zapytań SQL;
+- kwoty są przechowywane jako całkowita liczba groszy, aby uniknąć błędów liczb zmiennoprzecinkowych;
+- `tests/test_database.py` sprawdza logikę na oddzielnych, tymczasowych bazach;
+- GitHub Actions instaluje zależności i uruchamia testy po zmianach w `main` oraz w pull requestach.
+
+## Jakość projektu
+
+- 7 odizolowanych testów automatycznych;
+- automatyczna weryfikacja CI na GitHubie;
+- ograniczenia i walidacja danych w interfejsie oraz schemacie SQLite;
+- lokalna baza i sekrety wykluczone z repozytorium;
+- kolejne etapy projektu zapisane jako tagi i GitHub Releases.
 
 ## Uruchomienie na Windows
 
@@ -77,8 +103,10 @@ Testy korzystają z oddzielnej, tymczasowej bazy SQLite. Nie odczytują ani nie 
 app.py                  interfejs aplikacji Streamlit
 database.py             operacje na bazie SQLite
 tests/test_database.py  automatyczne testy bazy danych
+.github/workflows/      automatyczne testy GitHub Actions
 docs/                   dokumentacja sprintów i decyzji
 requirements.txt        zależności środowiska Python
+LICENSE                 licencja MIT
 ```
 
 ## Dokumentacja

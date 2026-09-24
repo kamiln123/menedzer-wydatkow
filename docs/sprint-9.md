@@ -36,14 +36,15 @@ Zamknąć projekt jako spójną, sprawdzoną i gotową do prezentacji wersję `v
 - [x] Naprawić odświeżanie podsumowania, wykresu i filtrów po dodaniu wydatku.
 - [x] Dodać katalogi techniczne pytest do `.gitignore`.
 - [x] Dodać workflow GitHub Actions uruchamiający testy.
-- [ ] Potwierdzić poprawne wykonanie workflow na GitHubie.
+- [x] Potwierdzić poprawne wykonanie workflow na GitHubie — pierwszy przebieg zakończony wynikiem `success`.
 - [x] Uruchomić wszystkie testy lokalne — 7 testów zakończonych powodzeniem.
-- [ ] Wykonać test startu aplikacji i pełny test ręczny MVP.
-- [ ] Dodać zrzut ekranu sekcji zarządzania wydatkiem.
-- [ ] Uzupełnić README i sprawdzić wszystkie odnośniki.
-- [ ] Uzupełnić tematy repozytorium na GitHubie.
+- [x] Wykonać test startu aplikacji — endpoint zdrowia oraz strona zwracają HTTP 200.
+- [x] Wykonać pełny test ręczny MVP — potwierdzono wszystkie 12 scenariuszy.
+- [x] Dodać zrzuty ekranu formularza oraz sekcji zarządzania wydatkiem.
+- [x] Uzupełnić README i sprawdzić wszystkie odnośniki.
+- [x] Uzupełnić tematy repozytorium na GitHubie.
 - [x] Dodać licencję MIT dla właściciela praw Kamil Napora.
-- [ ] Wykonać końcowy audyt kodu, zależności, danych i dokumentacji.
+- [x] Wykonać końcowy audyt kodu, zależności, danych i dokumentacji.
 - [ ] Utworzyć commit, tag `v1.0.0` i GitHub Release.
 
 ## Kryteria ukończenia
