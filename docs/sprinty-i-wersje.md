@@ -22,7 +22,7 @@ Numer wersji ma postać `vMAJOR.MINOR.PATCH`:
 | 6 | `v0.6.0` | Są wykresy oraz dopracowana walidacja. **Ukończono i opublikowano 2026-09-01.** |
 | 7 | `v0.7.0` | Projekt ma automatyczne testy oraz pierwsze materiały portfolio. **Ukończono i opublikowano 2026-09-06.** |
 | 8 | `v0.8.0` | Użytkownik może edytować i usuwać zapisane wydatki. **Ukończono i opublikowano 2026-09-21.** |
-| 9 | `v1.0.0` | MVP przechodzi końcowy audyt i jest gotowe do pokazania w portfolio. |
+| 9 | `v1.0.0` | MVP przechodzi końcowy audyt i jest gotowe do pokazania w portfolio. **Ukończono i opublikowano 2026-09-24.** |
 
 ## Repozytorium
 

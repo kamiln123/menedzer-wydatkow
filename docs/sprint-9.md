@@ -45,7 +45,7 @@ Zamknąć projekt jako spójną, sprawdzoną i gotową do prezentacji wersję `v
 - [x] Uzupełnić tematy repozytorium na GitHubie.
 - [x] Dodać licencję MIT dla właściciela praw Kamil Napora.
 - [x] Wykonać końcowy audyt kodu, zależności, danych i dokumentacji.
-- [ ] Utworzyć commit, tag `v1.0.0` i GitHub Release.
+- [x] Utworzyć commit, tag `v1.0.0` i GitHub Release.
 
 ## Kryteria ukończenia
 
@@ -55,3 +55,7 @@ Zamknąć projekt jako spójną, sprawdzoną i gotową do prezentacji wersję `v
 - Repozytorium nie zawiera lokalnej bazy, środowiska `.venv`, cache ani sekretów.
 - README pozwala uruchomić projekt od zera i prezentuje aktualny interfejs.
 - GitHub zawiera czytelną historię wersji oraz release `v1.0.0`.
+
+## Wynik
+
+Sprint został ukończony 2026-09-24. Kompletne MVP opublikowano jako tag i GitHub Release `v1.0.0`.

@@ -4,13 +4,11 @@
 
 Aplikacja webowa do zapisywania wydatków, kontrolowania miesięcznego budżetu i analizowania kosztów według kategorii.
 
-Projekt powstaje jako portfolio i praktyczny powrót do języka Python. Jest rozwijany iteracyjnie, a każdy ukończony sprint otrzymuje osobny tag i GitHub Release.
+Projekt powstał jako portfolio i praktyczny powrót do języka Python. Był rozwijany iteracyjnie, a każdy ukończony sprint otrzymał osobny tag i GitHub Release.
 
 ## Status projektu
 
-Opublikowane wersje obejmują formularz wydatków, trwały zapis SQLite, filtrowanie, miesięczne budżety, podsumowania, wykres Plotly oraz automatyczne testy. Sprint 8 z edycją i bezpiecznym usuwaniem wydatków został opublikowany jako `v0.8.0`.
-
-Przed wydaniem pełnego MVP `v1.0.0` pozostaje końcowy przegląd projektu.
+Kompletne MVP zostało opublikowane jako [`v1.0.0`](https://github.com/kamiln123/menedzer-wydatkow/releases/tag/v1.0.0). Aplikacja obejmuje formularz wydatków, trwały zapis SQLite, filtrowanie, miesięczne budżety, podsumowania, wykres Plotly, edycję i bezpieczne usuwanie oraz automatyczne testy lokalne i w GitHub Actions.
 
 ## Funkcje
 
@@ -50,7 +48,7 @@ Przed wydaniem pełnego MVP `v1.0.0` pozostaje końcowy przegląd projektu.
 
 ## Technologie
 
-- Python 3.12+
+- Python 3.13
 - Streamlit — interfejs webowy
 - SQLite — lokalna baza danych
 - Plotly — interaktywny wykres
@@ -75,7 +73,7 @@ Przed wydaniem pełnego MVP `v1.0.0` pozostaje końcowy przegląd projektu.
 
 ## Uruchomienie na Windows
 
-Wymagane są Python 3.12 lub nowszy oraz Git.
+Wymagane są Python 3.13 oraz Git.
 
 ```powershell
 git clone https://github.com/kamiln123/menedzer-wydatkow.git
@@ -119,8 +117,8 @@ LICENSE                 licencja MIT
 
 Projekt jest udostępniany na licencji MIT. Szczegóły znajdują się w pliku [LICENSE](LICENSE).
 
-## Dalszy plan
+## Wersje końcowe
 
 - `v0.7.0` — automatyczne testy i materiały portfolio — opublikowano;
 - `v0.8.0` — edycja i usuwanie wydatków — opublikowano;
-- `v1.0.0` — końcowy przegląd i kompletne MVP.
+- `v1.0.0` — końcowy przegląd i kompletne MVP — opublikowano.

@@ -133,3 +133,9 @@ Ten plik zapisuje ważniejsze ustalenia oraz ich uzasadnienie. Dzięki temu doku
 **Decyzja:** Projekt zostaje udostępniony na licencji MIT, a właścicielem praw autorskich wskazanym w pliku licencji jest Kamil Napora.
 
 **Uzasadnienie:** Jawna, powszechnie rozpoznawalna licencja jasno określa zasady używania kodu i zwiększa kompletność publicznego repozytorium portfolio.
+
+## 2026-09-24 — Pierwsza kompletna wersja projektu
+
+**Decyzja:** Sprint 9 został zakończony, a kompletne MVP oznaczono tagiem `v1.0.0` i opublikowano jako GitHub Release.
+
+**Uzasadnienie:** Aplikacja spełnia wszystkie przyjęte kryteria MVP, przeszła testy automatyczne i ręczne, a kod, dokumentacja oraz prezentacja repozytorium zostały poddane końcowemu audytowi.
